@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  --COR00: rgb(0, 0, 128);
+  --COR01: rgb(0, 0, 192);
+  --COR02: rgb(16, 64, 255, 0.3);
+  --COR03: rgb(0, 64, 255, 0.3);
+  --COR04: rgba(0, 128, 255, 0.3);
+  --COR05: rgba(0, 191, 255, 0.3);
+}
+
+body {
+  background-color: var(--COR05);
+
+  header {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    background-color: var(--COR04);
+    width: 95%;
+    min-width: 345px;
+    margin: 15px auto;
+    border-radius: 10px;
+
+    #titulo {
+      font-size: 30px;
+      padding: 25px 0;
+      text-align: center;
+    }
+
+    #caixaAvo {
+      background-color: var(--COR03);
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      width: 90%;
+      padding: 10px;
+      border-radius: 10px;
+      // box-shadow: -5px -10px #888888;
+
+      section {
+        flex: 1;
+        order: 10;
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+
+          thead {
+            tr {
+              border-bottom: 2px solid #ccc;
+              th {
+                padding: 20px 1px;
+                text-align: left;
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              border-bottom: 2px solid #ccc;
+              input {
+                max-width: 40px;
+              }
+              td { 
+                padding: 10px 1px;
+              }
+            }
+          }
+        }
+      }
+
+      aside {
+        min-width: 150px;
+        order: 20;
+        background-color: var(--COR02);
+        border-radius: 5px;
+        text-align: center;
+        padding: 15px 3px;
+        max-height: 300px;
+      }
+    }
+    // pra ficar responsivo
+    @media screen and (max-width: 645px) {
+      #caixaAvo {
+        flex-flow: column;
+        align-items: center;
+        aside {
+          order: 0;
+          max-width: 150px;
+        }
+      }
+    }    
+  }
+
+  footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+  }
+}

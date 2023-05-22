@@ -3,7 +3,7 @@
   padding: 0;
   --COR00: rgb(0, 0, 128);
   --COR01: rgb(0, 0, 192);
-  --COR02: rgb(0, 0, 255);
+  --COR02: rgb(16, 64, 255, 0.3);
   --COR03: rgb(0, 64, 255, 0.3);
   --COR04: rgba(0, 128, 255, 0.3);
   --COR05: rgba(0, 191, 255, 0.3);
@@ -12,8 +12,7 @@
 body {
   background-color: var(--COR05);
 }
-
-header {
+body header {
   background-color: black;
   color: white;
   font-size: 20px;
@@ -21,20 +20,19 @@ header {
   display: flex;
   justify-content: center;
 }
-
-main {
+body main {
   background-color: var(--COR04);
-  width: 90%;
+  width: 95%;
+  min-width: 345px;
   margin: 15px auto;
   border-radius: 10px;
-  padding: 10px;
 }
-main #titulo {
+body main #titulo {
   font-size: 30px;
   padding: 25px 0;
   text-align: center;
 }
-main #caixaAvo {
+body main #caixaAvo {
   background-color: var(--COR03);
   display: flex;
   justify-content: center;
@@ -43,27 +41,52 @@ main #caixaAvo {
   padding: 10px;
   border-radius: 10px;
 }
-main #caixaAvo section {
+body main #caixaAvo section {
   flex: 1;
+  order: 10;
 }
-main #caixaAvo aside {
-  min-width: 150px;
-}
-
-table {
+body main #caixaAvo section table {
   width: 100%;
   border-collapse: collapse;
 }
-table thead tr {
+body main #caixaAvo section table thead tr {
   border-bottom: 2px solid #ccc;
 }
-table thead tr th {
+body main #caixaAvo section table thead tr th {
+  padding: 20px 1px;
   text-align: left;
-  padding: 5px;
 }
-table tbody tr {
+body main #caixaAvo section table tbody tr {
   border-bottom: 2px solid #ccc;
 }
-table tbody tr td {
-  padding: 15px;
+body main #caixaAvo section table tbody tr input {
+  max-width: 40px;
 }
+body main #caixaAvo section table tbody tr td {
+  padding: 10px 1px;
+}
+body main #caixaAvo aside {
+  min-width: 150px;
+  order: 20;
+  background-color: var(--COR02);
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px 3px;
+  max-height: 300px;
+}
+@media screen and (max-width: 645px) {
+  body main #caixaAvo {
+    flex-flow: column;
+    align-items: center;
+  }
+  body main #caixaAvo aside {
+    order: 0;
+    max-width: 150px;
+  }
+}
+body footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+}/*# sourceMappingURL=style.css.map */
